@@ -3,6 +3,9 @@ import platform
 import psutil
 import os
 
+def test_func():
+	pass
+
 # 初始化 WMI 对象
 c = wmi.WMI()
 
