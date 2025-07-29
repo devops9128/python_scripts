@@ -1,0 +1,54 @@
+{
+  "logging": {
+    "level": "INFO",
+    "file": "exporter.log"
+  },
+  "exports": {
+    "database": {
+      "type": "mysql",
+      "host": "localhost",
+      "port": 3306,
+      "username": "loguser",
+      "password": "logpass",
+      "database": "logs_db",
+      "logs_table": "log_entries",
+      "anomalies_table": "log_anomalies"
+    },
+    "mongodb": {
+      "host": "localhost",
+      "port": 27017,
+      "database": "logs",
+      "username": "mongouser",
+      "password": "mongopass",
+      "logs_collection": "log_entries",
+      "anomalies_collection": "log_anomalies"
+    },
+    "elasticsearch": {
+      "host": "localhost",
+      "port": 9200,
+      "logs_index": "log-entries",
+      "anomalies_index": "log-anomalies"
+    },
+    "redis": {
+      "host": "localhost",
+      "port": 6379,
+      "db": 0,
+      "password": "redispass",
+      "stats_key": "log_stats",
+      "anomaly_key": "log_anomalies_count"
+    },
+    "file": {
+      "output_dir": "./exports",
+      "format": "csv"
+    },
+    "email": {
+      "smtp_host": "smtp.example.com",
+      "smtp_port": 587,
+      "use_tls": true,
+      "username": "alerts@example.com",
+      "password": "emailpass",
+      "from": "alerts@example.com",
+      "to": ["admin@example.com", "ops@example.com"]
+    }
+  }
+}
